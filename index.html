@@ -6,97 +6,117 @@
     <meta name="description" content="Work from home opportunity to earn money online.">
     <title>Work From Home - Online Assistance</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             background: url('your-background-image.jpg') no-repeat center center/cover;
-            margin: 0;
-            padding: 0;
             color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         .container {
-            width: 100%;
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
+            width: 90%;
+            max-width: 700px;
+            padding: 30px;
             background: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
+            border-radius: 15px;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
         }
 
         header {
             background: linear-gradient(to right, #800080, #ff4500);
             color: white;
-            padding: 30px;
+            padding: 40px;
             border-radius: 10px;
         }
 
         header h1 {
-            font-size: 30px;
+            font-size: 36px;
             margin: 0;
         }
 
         header span {
-            font-size: 22px;
+            font-size: 28px;
             display: block;
         }
 
         h2 {
             color: #FFD700;
-            font-size: 22px;
+            font-size: 26px;
+            margin-top: 20px;
         }
 
         h3 {
-            font-size: 26px;
+            font-size: 30px;
             font-weight: bold;
+            margin-top: 10px;
         }
 
         p {
-            font-size: 18px;
+            font-size: 20px;
+            margin-top: 10px;
         }
 
         h4 {
-            font-size: 26px;
+            font-size: 28px;
             color: #ff0000;
+            margin-top: 10px;
         }
 
         .highlight {
-            font-size: 30px;
+            font-size: 32px;
             font-weight: bold;
         }
 
         /* Buttons */
         .whatsapp-btn, .contact-btn {
             display: block;
-            padding: 15px 20px;
+            padding: 18px 24px;
             text-decoration: none;
-            border-radius: 5px;
-            margin: 20px auto;
-            font-size: 20px;
-            width: 80%;
+            border-radius: 10px;
+            margin: 25px auto;
+            font-size: 22px;
+            width: 90%;
             font-weight: bold;
-            transition: 0.3s;
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
-            animation: popUp 0.5s ease-in-out;
+            text-align: center;
+            transition: transform 0.3s, opacity 0.3s;
+            animation: bounce 1.5s infinite alternate;
         }
 
         .whatsapp-btn {
             background: #25D366;
             color: white;
+            box-shadow: 0px 5px 10px rgba(0, 255, 0, 0.4);
         }
 
         .contact-btn {
             background: #0000ff;
             color: white;
+            box-shadow: 0px 5px 10px rgba(0, 0, 255, 0.4);
         }
 
-        @keyframes popUp {
-            0% { transform: scale(0.8); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+        /* बटन को बिलिंग (Bounce) करने का इफेक्ट */
+        @keyframes bounce {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
         }
 
         .whatsapp-btn:hover, .contact-btn:hover {
+            transform: scale(1.1);
             opacity: 0.8;
         }
 
@@ -118,7 +138,7 @@
 
         .popup {
             background: white;
-            padding: 30px;
+            padding: 40px;
             border-radius: 10px;
             width: 90%;
             max-width: 400px;
@@ -134,24 +154,24 @@
         }
 
         .popup h2 {
-            font-size: 24px;
+            font-size: 26px;
             color: #800080;
         }
 
         .popup p {
-            font-size: 18px;
+            font-size: 20px;
             margin: 10px 0;
         }
 
         .close-btn {
             background: red;
             color: white;
-            padding: 12px 20px;
+            padding: 14px 22px;
             border: none;
-            font-size: 18px;
+            font-size: 20px;
             cursor: pointer;
             border-radius: 5px;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         .show-popup {
