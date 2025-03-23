@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Work from home opportunity to earn money online.">
     <title>Work From Home - Online Assistance</title>
     <style>
         body {
@@ -20,54 +21,65 @@
             padding: 20px;
         }
 
-        /* Popup Box */
-        .popup {
-            position: fixed;
-            width: 90%;
-            max-width: 400px;
-            background: #fff;
+        header {
+            background: linear-gradient(to right, #800080, #ff4500);
+            color: white;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             border-radius: 10px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 1000;
-            display: none;
         }
 
-        .popup h2 {
-            color: #800080;
-            font-size: 22px;
-            margin-bottom: 10px;
+        header h1 {
+            font-size: 24px;
+            margin: 0;
         }
 
-        .popup span {
-            color: #ff4500;
+        header span {
             font-size: 18px;
+            display: block;
+        }
+
+        main {
+            margin-top: 20px;
+        }
+
+        h2 {
+            color: #800080;
+            font-size: 18px;
+        }
+
+        h3 {
+            color: #333;
+            font-size: 22px;
             font-weight: bold;
         }
 
-        .close-btn {
-            background: #ff0000;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 15px;
+        p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        h4 {
+            font-size: 22px;
+            color: #ff0000;
+        }
+
+        .highlight {
+            font-size: 24px;
+            font-weight: bold;
         }
 
         /* Buttons */
         .whatsapp-btn, .contact-btn {
             display: block;
-            font-size: 18px;
-            padding: 12px 20px;
+            padding: 15px 20px;
             text-decoration: none;
             border-radius: 5px;
-            width: 80%;
             margin: 20px auto;
+            font-size: 18px;
+            width: 80%;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
         }
 
         .whatsapp-btn {
@@ -80,50 +92,144 @@
             color: white;
         }
 
-        /* Background Overlay */
-        .overlay {
+        .whatsapp-btn:hover, .contact-btn:hover {
+            opacity: 0.8;
+        }
+
+        .recruit-box {
+            background: #800080;
+            color: white;
+            padding: 15px;
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+
+        .recruit-box p {
+            margin: 5px 0;
+        }
+
+        .whatsapp-icon {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background: url('whatsapp-icon.png') no-repeat center;
+            background-size: cover;
+            margin: 10px auto;
+        }
+
+        /* Popup Styles */
+        .popup-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: none;
-            z-index: 999;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s ease-in-out;
         }
+
+        .popup {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .popup h2 {
+            font-size: 22px;
+            color: #800080;
+        }
+
+        .popup p {
+            font-size: 16px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .close-btn {
+            background: red;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .show-popup {
+            visibility: visible;
+            opacity: 1;
+        }
+
     </style>
 </head>
 <body>
 
-    <!-- Popup -->
-    <div class="overlay" id="overlay"></div>
-    <div class="popup" id="popup">
-        <h2>WORK FROM HOME</h2>
-        <span>ONLINE ASSISTANCE</span>
-        <br>
-        <button class="close-btn" onclick="closePopup()">Close</button>
+    <div class="container">
+        <header>
+            <h1>WORK FROM HOME <br><span>ONLINE ASSISTANCE</span></h1>
+        </header>
+
+        <main>
+            <h2>WE'RE HIRING ONLINE ASSISTANTS!</h2>
+            <h3>Work From Home Earning At Ease</h3>
+            <p>The new normal has changed the way we work and earn money today. We are here to help everyone make money from home.</p>
+            <h4>EARN <span class="highlight">8000 rupees +</span> /day!</h4>
+
+            <a href="#" class="whatsapp-btn" onclick="openPopup('whatsappPopup')">📱 ADD WHATSAPP</a>
+
+            <div class="recruit-box">
+                <p><strong>RECRUIT</strong> Online Assistant</p>
+                <p>High Income - <strong>3000 Rs + /day</strong></p>
+                <a href="#" class="whatsapp-icon"></a>
+            </div>
+
+            <a href="#" class="contact-btn" onclick="openPopup('contactPopup')">📩 CONTACT US >></a>
+        </main>
     </div>
 
-    <!-- Main Content -->
-    <div class="container">
-        <h3>We Are Hiring Online Assistants!</h3>
-        <h4>Earn 8000 rupees + /day!</h4>
+    <!-- WhatsApp Popup -->
+    <div class="popup-overlay" id="whatsappPopup">
+        <div class="popup">
+            <h2>Join Us on WhatsApp!</h2>
+            <p>Click the button below to connect with us on WhatsApp.</p>
+            <a href="#" class="whatsapp-btn">Join WhatsApp</a>
+            <button class="close-btn" onclick="closePopup('whatsappPopup')">Close</button>
+        </div>
+    </div>
 
-        <a href="#" class="whatsapp-btn">Add WhatsApp</a>
-        <a href="#" class="contact-btn">Contact Us</a>
+    <!-- Contact Us Popup -->
+    <div class="popup-overlay" id="contactPopup">
+        <div class="popup">
+            <h2>Contact Us</h2>
+            <p>Need help? Reach out to us by clicking the button below.</p>
+            <a href="#" class="contact-btn">Send Message</a>
+            <button class="close-btn" onclick="closePopup('contactPopup')">Close</button>
+        </div>
     </div>
 
     <script>
-        // Show Popup on Load
-        window.onload = function() {
-            document.getElementById("overlay").style.display = "block";
-            document.getElementById("popup").style.display = "block";
-        };
+        function openPopup(popupId) {
+            document.getElementById(popupId).classList.add("show-popup");
+        }
 
-        // Close Popup
-        function closePopup() {
-            document.getElementById("overlay").style.display = "none";
-            document.getElementById("popup").style.display = "none";
+        function closePopup(popupId) {
+            document.getElementById(popupId).classList.remove("show-popup");
         }
     </script>
 
