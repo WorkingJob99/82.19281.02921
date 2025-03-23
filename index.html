@@ -12,10 +12,15 @@
             color: white;
             margin: 0;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .container {
             max-width: 600px;
-            margin: auto;
+            text-align: center;
         }
         h1 {
             font-size: 32px;
@@ -44,38 +49,41 @@
         }
         /* WhatsApp Button */
         .whatsapp-btn {
-            display: inline-block;
-            background-color: white;
-            color: black;
-            padding: 15px 20px;
-            text-decoration: none;
-            font-size: 22px;
-            border-radius: 10px;
-            margin-top: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 280px;
+            background-color: white;
+            color: black;
+            padding: 15px 20px;
+            font-size: 22px;
+            border-radius: 50px;
             font-weight: bold;
             cursor: pointer;
             border: none;
-            animation: popUp 1s infinite alternate;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 300px;
+            margin-top: 30px;
         }
         .whatsapp-btn img {
             width: 40px;
             margin-right: 10px;
         }
-        /* WhatsApp Button Pop-up Animation */
-        @keyframes popUp {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
         }
         /* Countdown Timer */
         .countdown {
-            font-size: 28px;
+            font-size: 40px;
             font-weight: bold;
             margin: 20px;
             display: none;
+            animation: countdownPop 1s infinite alternate;
+        }
+        @keyframes countdownPop {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.2); opacity: 0.8; }
         }
         /* Contact Us Button */
         .contact-btn {
@@ -84,13 +92,23 @@
             color: black;
             padding: 15px 20px;
             text-decoration: none;
-            font-size: 22px;
+            font-size: 24px;
             font-weight: bold;
-            border-radius: 10px;
-            margin-top: 20px;
-            width: 280px;
+            border-radius: 50px;
+            width: 300px;
             text-align: center;
-            animation: popUp 1s infinite alternate;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+        .contact-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        /* Button Animation */
+        @keyframes popUp {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
         }
     </style>
 </head>
