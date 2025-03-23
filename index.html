@@ -6,7 +6,7 @@
     <title>Make Money Online</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             text-align: center;
             background-color: #025E2B; /* Dark Green Background */
             color: white;
@@ -18,11 +18,14 @@
             margin: auto;
         }
         h1 {
-            font-size: 28px;
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;
         }
         p {
-            font-size: 18px;
+            font-size: 20px;
             margin: 20px 0;
+            line-height: 1.5;
         }
         .features {
             text-align: left;
@@ -32,31 +35,61 @@
         .features p {
             display: flex;
             align-items: center;
-            font-size: 16px;
+            font-size: 18px;
+            font-weight: bold;
         }
         .features img {
-            width: 20px;
+            width: 24px;
             margin-right: 10px;
         }
         .whatsapp-btn {
             display: inline-block;
             background-color: white;
             color: black;
-            padding: 10px 15px;
+            padding: 15px 20px;
             text-decoration: none;
-            font-size: 18px;
-            border-radius: 5px;
+            font-size: 20px;
+            border-radius: 10px;
             margin-top: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 250px;
+            width: 280px;
             margin: auto;
             font-weight: bold;
+            cursor: pointer;
+            border: none;
         }
         .whatsapp-btn img {
-            width: 24px;
+            width: 32px; /* Bigger WhatsApp Icon */
             margin-right: 10px;
+        }
+        .loading-animation {
+            width: 50px;
+            height: 50px;
+            border: 6px solid white;
+            border-top: 6px solid blue;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+            display: none;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .contact-btn {
+            display: none;
+            background-color: blue;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 10px;
+            margin-top: 20px;
+            width: 280px;
+            text-align: center;
         }
     </style>
 </head>
@@ -73,10 +106,29 @@
             <p><img src="https://cdn-icons-png.flaticon.com/512/845/845646.png" alt="✔"> Consult now and start making money</p>
         </div>
 
-        <a href="https://wa.me/" class="whatsapp-btn">
+        <!-- WhatsApp Button -->
+        <button class="whatsapp-btn" onclick="startLoading()">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> Add WHATSAPP
-        </a>
+        </button>
+
+        <!-- Loading Animation -->
+        <div class="loading-animation" id="loading"></div>
+
+        <!-- Contact Button -->
+        <a href="https://wa.me/" class="contact-btn" id="contact-btn">Contact</a>
     </div>
+
+    <script>
+        function startLoading() {
+            document.querySelector(".whatsapp-btn").style.display = "none";
+            document.getElementById("loading").style.display = "block";
+
+            setTimeout(() => {
+                document.getElementById("loading").style.display = "none";
+                document.getElementById("contact-btn").style.display = "block";
+            }, 3000);
+        }
+    </script>
 
 </body>
 </html>
