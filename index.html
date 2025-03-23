@@ -23,12 +23,13 @@
             text-align: center;
         }
         h1 {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: bold;
             text-transform: uppercase;
+            animation: popUp 1s infinite alternate;
         }
         p {
-            font-size: 20px;
+            font-size: 22px;
             margin: 20px 0;
             line-height: 1.5;
         }
@@ -40,11 +41,11 @@
         .features p {
             display: flex;
             align-items: center;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
         }
         .features img {
-            width: 24px;
+            width: 28px;
             margin-right: 10px;
         }
         /* WhatsApp Button */
@@ -55,7 +56,7 @@
             background-color: white;
             color: black;
             padding: 15px 20px;
-            font-size: 22px;
+            font-size: 24px;
             border-radius: 50px;
             font-weight: bold;
             cursor: pointer;
@@ -64,9 +65,10 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             width: 300px;
             margin-top: 30px;
+            animation: popUp 1s infinite alternate;
         }
         .whatsapp-btn img {
-            width: 40px;
+            width: 45px;
             margin-right: 10px;
         }
         .whatsapp-btn:hover {
@@ -75,7 +77,7 @@
         }
         /* Countdown Timer */
         .countdown {
-            font-size: 40px;
+            font-size: 50px;
             font-weight: bold;
             margin: 20px;
             display: none;
@@ -88,11 +90,11 @@
         /* Contact Us Button */
         .contact-btn {
             display: none;
-            background-color: yellow;
+            background-color: #FFD700;
             color: black;
             padding: 15px 20px;
             text-decoration: none;
-            font-size: 24px;
+            font-size: 26px;
             font-weight: bold;
             border-radius: 50px;
             width: 300px;
@@ -100,6 +102,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
             margin-top: 20px;
+            animation: popUp 1s infinite alternate;
         }
         .contact-btn:hover {
             transform: scale(1.1);
@@ -134,7 +137,7 @@
         <div class="countdown" id="countdown">3</div>
 
         <!-- Contact Us Button -->
-        <a href="https://wa.me/" class="contact-btn" id="contact-btn">Contact Us</a>
+        <a href="https://wa.me/919876543210" class="contact-btn" id="contact-btn">Contact Us</a>
     </div>
 
     <script>
