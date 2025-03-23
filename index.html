@@ -8,7 +8,7 @@
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
-            background-color: #025E2B; /* Dark Green Background */
+            background-color: #0044CC; /* Blue Background */
             color: white;
             margin: 0;
             padding: 20px;
@@ -42,46 +42,46 @@
             width: 24px;
             margin-right: 10px;
         }
+        /* WhatsApp Button */
         .whatsapp-btn {
             display: inline-block;
             background-color: white;
             color: black;
             padding: 15px 20px;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 22px;
             border-radius: 10px;
             margin-top: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             width: 280px;
-            margin: auto;
             font-weight: bold;
             cursor: pointer;
             border: none;
+            animation: popUp 1s infinite alternate;
         }
         .whatsapp-btn img {
-            width: 32px; /* Bigger WhatsApp Icon */
+            width: 40px;
             margin-right: 10px;
         }
-        .loading-animation {
-            width: 50px;
-            height: 50px;
-            border: 6px solid white;
-            border-top: 6px solid blue;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
+        /* WhatsApp Button Pop-up Animation */
+        @keyframes popUp {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        /* Countdown Timer */
+        .countdown {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 20px;
             display: none;
         }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+        /* Contact Us Button */
         .contact-btn {
             display: none;
-            background-color: blue;
-            color: white;
+            background-color: yellow;
+            color: black;
             padding: 15px 20px;
             text-decoration: none;
             font-size: 22px;
@@ -90,6 +90,7 @@
             margin-top: 20px;
             width: 280px;
             text-align: center;
+            animation: popUp 1s infinite alternate;
         }
     </style>
 </head>
@@ -107,26 +108,33 @@
         </div>
 
         <!-- WhatsApp Button -->
-        <button class="whatsapp-btn" onclick="startLoading()">
+        <button class="whatsapp-btn" onclick="startCountdown()">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> Add WHATSAPP
         </button>
 
-        <!-- Loading Animation -->
-        <div class="loading-animation" id="loading"></div>
+        <!-- Countdown Timer -->
+        <div class="countdown" id="countdown">3</div>
 
-        <!-- Contact Button -->
-        <a href="https://wa.me/" class="contact-btn" id="contact-btn">Contact</a>
+        <!-- Contact Us Button -->
+        <a href="https://wa.me/" class="contact-btn" id="contact-btn">Contact Us</a>
     </div>
 
     <script>
-        function startLoading() {
+        function startCountdown() {
             document.querySelector(".whatsapp-btn").style.display = "none";
-            document.getElementById("loading").style.display = "block";
+            let countdownElement = document.getElementById("countdown");
+            countdownElement.style.display = "block";
 
-            setTimeout(() => {
-                document.getElementById("loading").style.display = "none";
-                document.getElementById("contact-btn").style.display = "block";
-            }, 3000);
+            let count = 3;
+            let interval = setInterval(() => {
+                count--;
+                countdownElement.innerText = count;
+                if (count === 0) {
+                    clearInterval(interval);
+                    countdownElement.style.display = "none";
+                    document.getElementById("contact-btn").style.display = "block";
+                }
+            }, 1000);
         }
     </script>
 
