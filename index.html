@@ -22,7 +22,10 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            width: 100%;
+            width: 100vw;
+            transform: scale(1.2); /* Zoom Effect */
+            transform-origin: center; /* Center से Zoom करें */
+            overflow: hidden; /* कटने से बचाने के लिए */
         }
 
         .container {
@@ -106,7 +109,7 @@
             box-shadow: 0px 5px 10px rgba(0, 0, 255, 0.4);
         }
 
-        /* बटन को बाउंस (बिलिंग) करने का इफेक्ट */
+        /* बटन को बिलिंग (Bounce) करने का इफेक्ट */
         @keyframes bounce {
             from {
                 transform: scale(1);
